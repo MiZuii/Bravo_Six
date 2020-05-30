@@ -1,0 +1,182 @@
+﻿<!DOCTYPE>
+
+<html>
+
+	<head>
+		
+		<title>Bravo six</title>
+		<meta charset="UTF-8">
+		<link href="img/bravo-six-small.ico" rel="icon">
+		<link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/div_placement.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+	</head>
+	
+	<body>
+	
+		<div id="head" class="side_divs">
+			<div id="head_logo">
+				<img id="logo" src="img/bravo-six-big.png"></img>
+			</div>
+			<div id="head_title">
+				<h1 id="project_title">Project Bravo-Six</h1>
+			</div>
+		</div>
+		
+		<div class="container" id="middle">
+			
+			<div class="row">
+			
+				<div id="animation" class="col-xs-12 col-lg-6 ">
+					
+					<div id="inner_animation" class="inner_div">
+					
+						<canvas id="animation_window"></canvas>
+						
+						<canvas id="animation_window_mirror"></canvas>
+					
+					</div>
+					
+				</div>
+				
+				<div id="variables" class="col-xs-12 col-lg-6 ">
+						
+					<div id="inner_variables" class="inner_div">
+					
+						<div class="container-fluid">
+						
+							<div class="row">
+								
+								<div class="col-xs-12 col-md-6 col-lg-12 col-xl-6 slider_div">
+									<label class="slider_description">Długość pierwszego wahadła</label>
+									<input id="r1" class="slider" type="range" min="0.5" max="10" step="0.01" oninput="r1f();">
+									<p class="slid_disp"><span id="r1_v"></span>m</p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-12 col-xl-6 slider_div">
+									<label class="slider_description">Długość drógiego wahadła</label>
+									<input id="r2" class="slider" type="range" min="0.5" max="10" step="0.01" oninput="r2f();">
+									<p class="slid_disp"><span id="r2_v"></span>m</p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-12 col-xl-6 slider_div">
+									<label class="slider_description">Masa pierwszej kuli</label>
+									<input id="m1" class="slider" type="range" min="0.1" max="20" step="0.01" oninput="m1f();">
+									<p class="slid_disp"><span id="m1_v"></span>kg</p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-12 col-xl-6 slider_div">
+									<label class="slider_description">Masa drógiej kuli</label>
+									<input id="m2" class="slider" type="range" min="0.1" max="20" step="0.01" oninput="m2f();">
+									<p class="slid_disp"><span id="m2_v"></span>kg</p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-12 col-xl-6 slider_div">
+									<label class="slider_description">Przyspieszenie grawitacyjne</label>
+									<input id="g" class="slider" type="range" min="0.1" max="100" step="0.1" oninput="gf();">
+									<p class="slid_disp"><span id="g_v"></span>m/s^2</p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-12 col-xl-6 slider_div">
+									<label class="slider_description">Promień kul</label>
+									<input id="radius" class="slider" name="radius" type="range" min="0.1" max="10" step="0.1" oninput="radiusf();">
+									<p class="slid_disp"><span id="radius_v"></span></p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-12 col-xl-6 slider_div">
+									<label class="slider_description">Kąt pierwszego wahadła</label>
+									<input id="a1" class="slider" type="range" min="0.1" max="6.28" step="0.01" oninput="a1f();">
+									<p class="slid_disp"><span id="a1_v"></span>rad</p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-12 col-xl-6 slider_div">
+									<label class="slider_description">Kąt drugiego wahadła</label>
+									<input id="a2" class="slider" type="range" min="0.1" max="6.28" step="0.01" oninput="a2f();">
+									<p class="slid_disp"><span id="a2_v"></span>rad</p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-12 col-xl-6 slider_div ">
+									<label class="slider_description">Skala wyświetlania</label>
+									<input id="scale" class="slider" type="range" min="0" max="50" step="1" oninput="scalef();">
+									<p class="slid_disp"><span id="scale_v"></span></p>
+								</div>
+								<div class="col-xs-12 col-md-6 col-lg-12 col-xl-6 slider_div ">
+									<label class="slider_description">Przeźroczystość lini</label>
+									<input id="op" class="slider" type="range" min="0.01" max="1" step="0.01" oninput="opf();">
+									<p class="slid_disp"><span id="op_v"></span></p>
+								</div>
+								
+							</div>
+							<div class="row">
+								
+								<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-6 button_div">
+									<button id="restart" onclick="restartf();" class="button">Restart</button>
+								</div>
+								
+								<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-6 button_div">
+									<button id="default" onclick="set_default();" class="button">Default</button>
+								</div>
+								
+								<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-6 button_div">
+									<button id="pause" onclick="pausef();" class="button">Pause/Play</button>
+								</div>
+								
+								<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-6 button_div">
+									<button id="clear" onclick="clearf();" class="button">Clear</button>
+								</div>
+								
+								<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-6 button_div">
+									<button id="line_draw" onclick="line_drawf();" class="button">Line on/off</button>
+								</div>
+								
+								<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 col-xl-6 button_div">
+									<button id="fade" onclick="fadef();" class="button">Fade mode</button>
+								</div>
+								
+							</div>
+							
+						</div>
+						
+					</div>
+
+				</div>
+				
+				<div id="description" class="col-xs-12 ">
+				
+					<div id="inner_description" class="inner_div">
+				
+						<h1 id="description_h">Podwójne wahadło</h1>
+						<p id="description_text">Podwójne wahadło - jest to układ fizyczny złożony z dwóch wahadeł pojedynczych gdzie jedno jest przyczepione do końca drugiego. Ruch takiego wahadła jest o tyle ciekawszy od ruchu pojedynczego wahadła iż nie da się opisać toru ruchu linii zakreślanej przez koniec dolnego wahadła. Da się jednak wyprowadzić wzory na poszczególne wartości przyspieszenia kątowego poszczególnych wahadeł.</p>
+						
+					</div>
+						
+				</div>
+			
+			</div>
+			
+		</div>
+		
+		<div id="bottom" class="side_divs">
+			
+		</div>
+		
+		
+		
+		<!-- bootstrap ini -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<!-- bootstrap ini -->
+		
+		
+		
+		<!-- My scripts ini -->
+		<script src="js/animations.js"></script>
+		<!-- My scripts ini -->
+		
+		
+		
+		<script>
+		set_default();
+		animate();
+		</script>
+	
+	</body>
+
+</html>
