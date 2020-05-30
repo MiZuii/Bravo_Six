@@ -1,0 +1,96 @@
+﻿canvas {
+	width:100%;
+	height:100%;
+}
+
+.button {
+	width: 100%;
+	height: 100%;
+}
+
+.side_divs {
+	width:100%;
+	height:100px;
+}
+
+.slider_div {
+	width:100%;
+	min-height:40px;
+}
+
+.slider {
+	width:70%;
+	height:5px;
+}
+
+.slid_disp {
+	display:inline-block;
+}
+
+.slider_description {
+	margin-top: -6px;
+	margin-bottom: -2px;
+	width:100%;
+}
+
+.button_div {
+	height: 70px;
+}
+
+.inner_div {
+	width:100%;
+	height:100%;
+}
+
+#description {
+	padding:20px;
+}
+
+#variables {
+	padding:20px;
+}
+
+#animation {
+	padding:20px;	
+}
+
+#middle {
+	clear:both;
+}
+
+#animation_window {
+	width:100%;
+	height:100%;
+	height:400px;
+	z-index:3;
+}
+
+#animation_window_mirror {
+	width:100%;
+	height:100%;
+	height:400px;
+	margin-top:-400px;
+	z-index:4;
+}
+
+#logo {
+	width:80px;
+	height:80px;
+	margin:10px;
+}
+
+#head_logo {
+	float:left;
+	height:100%;
+}
+
+#head_title {
+	float:left;
+	height:100%;
+}
+
+#project_title {
+	transform: translate(0,-50%);
+	position:relative;
+	top:50%;
+}
